@@ -188,10 +188,11 @@
 </html>
 
 <script>
+
   $("#submit").on("click", function (event) {
     event.preventDefault();
 
-    var friendSeeker = {
+    var userData = {
       name: $("#name").val().trim(),
       photo: $("#photo").val().trim(),
       scores: [
@@ -207,24 +208,18 @@
         $("#q10").val().trim()
       ]
     };
-    
-    // var currentURL = window.location.origin;
+    console.log(userData);
 
-    $.post("/api/friends", friendSeeker, function (data) {
-      console.log(data);
-      
-
+    $.post("/api/friends", userData, function (data) {
       if (data) {
         $("#bestMatch").text(data.name);
-				$("#match-img").attr("src", data.photo);
-        
+        $("#match-img").attr("src", data.photo);
         $("#results-modal").modal("toggle");
+
       }
       else {
-        alert("Sorry, no friends for you.");
-      }
 
-        $("#name").val(" "),
+      } $("#name").val(" "),
         $("#photo").val(" "),
         $("#q1").val(" "),
         $("#q2").val(" "),

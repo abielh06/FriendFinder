@@ -7,7 +7,15 @@ module.exports = function (app) {
         res.json(friends);
     });
 
+    // app.post('/api/friends', function (req, res) {
+    //     console.log(req.body);
+
+    //     friends.push(req.body)
+
+    //     res.json(friends);
+
     
+
     app.post('/api/friends', function (req, res) {
         var friendMatch = {
             name: " ",
@@ -39,6 +47,6 @@ module.exports = function (app) {
         }
 
         friends.push(userData);
-        res.json(friends[friendMatch]);
+        res.json(friendMatch);
     });
-};
+}

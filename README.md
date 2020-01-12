@@ -4,11 +4,17 @@
 
 * Technologiess Used    
     -Heroku
+
     -express
+
     -Javascript
+
     -jquery
+
     -node.js
+    
     -bootstrap
+
 
 * Heroku Link
     https://git.heroku.com/friend-application.git
